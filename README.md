@@ -24,37 +24,38 @@ Outline
 
 0. Introduction - Why, What, Who, How
 1. Part I: Scientific Programming in Python
-   a. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-1-Introduction.ipynb)
-   b. [Programming Basics]((http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-2-Python-Programing-Basics.ipynb)
-   c. Numpy in a Nutshell
-   d. Scipy in a Nutshell
-   e. Mathplotlib in a Nutshell
+
+   1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-1-Introduction.ipynb)
+   2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-2-Python-Programing-Basics.ipynb)
+   3. Numpy in a Nutshell
+   4. Scipy in a Nutshell
+   5. Mathplotlib in a Nutshell
 2. Part II: Machine Learning and Data Mining \[in Python\]
-   a. Overview
-   b. Machine Learning Basics
+   1. Overview
+   2. Machine Learning Basics
       I.   On the Data
       II.  Regression
       III. Concept Learning
       IV.  Measuring Performance
-   c. Decision Trees
+   3. Decision Trees
       I.   Decision Tree Basics
       II.  Impurity Functions
       III. Decision Tree Algorithms
       IV.  Decision Tree Pruning
-   d. Statistical Learning
+   4. Statistical Learning
       I.   Probability Basics
       II.  Bayes Classification
       III. Graphical Models
-   e. Linear Models
-   f. Kernel Models
-   g. Neuronal Networks
+   5. Linear Models
+   6. Kernel Models
+   7. Neuronal Networks
       I.   Perceptron Learning
       II.  Multilayer Perceptrons
       III. Deep Learning
-   h. Ensemble Classifiers
-   i. Cluster Analysis
-   j. Association Rules
-   k. Reinforcement Learning
+   8. Ensemble Classifiers
+   9. Cluster Analysis
+   10. Association Rules
+   11. Reinforcement Learning
 3. Part III. Signal Analysis and Data Preprocessing 
     
 
