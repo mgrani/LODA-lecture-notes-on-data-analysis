@@ -33,26 +33,33 @@ Outline
 2. Part II: Machine Learning and Data Mining \[in Python\]
    1. Overview
    2. Machine Learning Basics
+
       I.   On the Data
       II.  Regression
       III. Concept Learning
       IV.  Measuring Performance
-      E-1. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/2.ML-and-DM/2.ML-and-DM-Example-LMS.ipynb))
+      E-1. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-LMS.ipynb))
+
    3. Decision Trees
       I.   Decision Tree Basics
       II.  Impurity Functions
       III. Decision Tree Algorithms
       IV.  Decision Tree Pruning
+
    4. Statistical Learning
+
       I.   Probability Basics
       II.  Bayes Classification
       III. Graphical Models
+
    5. Linear Models
    6. Kernel Models
    7. Neuronal Networks
+
       I.   Perceptron Learning
       II.  Multilayer Perceptrons
       III. Deep Learning
+
    8. Ensemble Classifiers
    9. Cluster Analysis
    10. Association Rules
