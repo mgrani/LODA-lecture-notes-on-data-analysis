@@ -38,7 +38,8 @@ Outline
       2. Regression
       3. Concept Learning
       4. Measuring Performance
-      5. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mg      5. Excercise [Regression and Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-Regression.ipynb)
+      5. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-LMS.ipynb)      
+      5. Excercise [Regression and Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-Regression.ipynb)
 
    3. Decision Trees
       1.   Decision Tree Basics
