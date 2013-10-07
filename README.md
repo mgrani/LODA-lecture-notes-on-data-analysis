@@ -27,43 +27,44 @@ Outline
 
    1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-1-Introduction.ipynb)
    2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-2-Python-Programing-Basics.ipynb)
-   3. Numpy in a Nutshell
+   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-3-Numpy.ipynb)
    4. Scipy in a Nutshell
    5. Mathplotlib in a Nutshell
 2. Part II: Machine Learning and Data Mining \[in Python\]
    1. Overview
    2. Machine Learning Basics
 
-      I.   On the Data
-      II.  Regression
-      III. Concept Learning
-      IV.  Measuring Performance
-      E-1. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-LMS.ipynb))
+      1. On the Data
+      2. Regression
+      3. Concept Learning
+      4. Measuring Performance
+      5. Excercise [Least Mean Square Algorithm](http://nbviewer.ipython.org/urls/raw.github.com/mg      5. Excercise [Regression and Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-Regression.ipynb)
 
    3. Decision Trees
-      I.   Decision Tree Basics
-      II.  Impurity Functions
-      III. Decision Tree Algorithms
-      IV.  Decision Tree Pruning
+      1.   Decision Tree Basics
+      2.  Impurity Functions
+      3. Decision Tree Algorithms
+      4.  Decision Tree Pruning
 
    4. Statistical Learning
 
-      I.   Probability Basics
-      II.  Bayes Classification
-      III. Graphical Models
+      1.   Probability Basics
+      2.  Bayes Classification
+      3. Graphical Models
 
    5. Linear Models
    6. Kernel Models
    7. Neuronal Networks
 
-      I.   Perceptron Learning
-      II.  Multilayer Perceptrons
-      III. Deep Learning
+      1.   Perceptron Learning
+      2.  Multilayer Perceptrons
+      3. Deep Learning
 
    8. Ensemble Classifiers
    9. Cluster Analysis
    10. Association Rules
    11. Reinforcement Learning
+
 3. Part III. Signal Analysis and Data Preprocessing 
     
 
