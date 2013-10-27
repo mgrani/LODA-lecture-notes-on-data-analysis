@@ -1734,245 +1734,4823 @@ text-align: inherit;
 <section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="scientific-computing-with-python">Scientific Computing with Python</h1>
-<p>by</p>
-<p><a href="http://www.mendeley.com/profiles/michael-granitzer/"><strong>Michael Granitzer</strong> (michael.granitzer@uni-passau.de)</a></p>
+<h1 id="scientific-programming-in-python-spip---programming-basics">Scientific Programming in Python (SPiP) - Programming Basics</h1>
+<p>by <a href="http://www.mendeley.com/profiles/michael-granitzer/">Michael Granitzer (michael.granitzer@uni-passau.de)</a></p>
 <p>based on the following sources</p>
 <ul>
-<li><a href="http://dml.riken.jp/~rob/">J.R. Johansson (robert@riken.jp)</a>: http://github.com/jrjohansson/scientific-python-lectures</li>
+<li><a href="http://dml.riken.jp/~rob/">J.R. Johansson (robert@riken.jp)</a>, <a href="http://github.com/jrjohansson/scientific-python-lectures">Scientific Programming in Pyton</a></li>
 </ul>
 <p><strong>License</strong></p>
-<p>This work is licensded under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a></p>
+<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a></p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-Python?">What is Python?<a class="anchor-link" href="#What-is-Python?">&#182;</a></h2>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://www.python.org/">Python</a> is a modern, general-purpose, object-oriented, high-level programming language.</p>
-<p>General characteristics of Python:</p>
+<h2 id="python-program-files">Python program files</h2>
 <ul>
-<li><strong>clean and simple language:</strong> Easy-to-read and intuitive code, easy-to-learn minimalistic syntax, maintainability scales well with size of projects.</li>
-<li><strong>expressive language:</strong> Fewer lines of code, fewer bugs, easier to maintain.</li>
-</ul>
-<p>Technical details:</p>
+<li><p>Python code files end with &quot;<code>.py</code>&quot;:</p>
+<pre><code>myprogram.py</code></pre></li>
+<li><p>Every line is a Python statement (or part thereof).</p>
 <ul>
-<li><strong>dynamically typed:</strong> No need to define the type of variables, function arguments or return types.</li>
-<li><strong>automatic memory management:</strong> No need to explicitly allocate and deallocate memory for variables and data arrays. No memory leak bugs.</li>
-<li><strong>interpreted:</strong> No need to compile the code. The Python interpreter reads and executes the python code directly.</li>
-</ul>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python:-Pros-and-Cons">Python: Pros and Cons<a class="anchor-link" href="#Python:-Pros-and-Cons">&#182;</a></h2>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Advantages:</p>
-<ul>
-<li>The main advantage is <strong>ease of programming</strong> and <strong>minimizing development time</strong></li>
-<li><p><strong>Modular and object-oriented programming</strong>, good system for <strong>packaging and code re-use</strong>.</p></li>
-<li>Documentation tightly integrated with the code.</li>
-<li><p>A <strong>large standard library</strong>, and a <strong>huge number of libraries</strong></p></li>
-</ul>
-<p>Disadvantages:</p>
-<ul>
-<li>Since Python is an interpreted and dynamically typed programming language, the execution of python code <strong>can be slow</strong> compared to compiled statically typed programming languages, such as C and Fortran. However, exentsion like <a href="http://cython.org/">Cython</a> allow to integrate fast C Code (e.g. for inner loops)</li>
-<li>Somewhat decentralized, with <strong>different environment, packages and documentation</strong> spread out at different places. Can make it harder to get started.</li>
-</ul>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-makes-python-suitable-for-scientific-computing?">What makes python suitable for scientific computing?<a class="anchor-link" href="#What-makes-python-suitable-for-scientific-computing?">&#182;</a></h2>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/optimizing-what.png" width="600"></p>
-</div>
-    </div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Python has a strong position in scientific computing:
-<ul>
-<li><strong>Large community of users</strong>, easy to find help and documentation.</li>
+<li>comment line start with <code>#</code></li>
 </ul></li>
-<li>Extensive ecosystem of scientific libraries and environments
-<ul>
-<li><strong>numpy</strong>: http://numpy.scipy.org - Numerical Python</li>
-<li><strong>scipy</strong>: http://www.scipy.org - Scientific Python</li>
-<li><strong>matplotlib</strong>: http://www.matplotlib.org - graphics library</li>
-</ul></li>
-<li>Great performance due to close integration with time-tested and highly optimized codes written in C and Fortran:
-<ul>
-<li>blas, altas blas, lapack, arpack, Intel MKL, ...</li>
-</ul></li>
-<li>Good support for
-<ul>
-<li>Parallel processing with processes and threads</li>
-<li>Interprocess communication (MPI)</li>
-<li>GPU computing (OpenCL and CUDA)</li>
-</ul></li>
-<li><p>Readily available and suitable for use on high-performance computing clusters.</p></li>
-<li><p>No license costs</p></li>
+<li><p><strong>Run Python Program from command line</strong></p>
+<pre><code>$ python myprogram.py</code></pre></li>
+<li>On UNIX systems</li>
+<li>common to <strong>define the path to the interpreter on the first line</strong> of the program as comment</li>
+<li><p>Note that this is a comment line as far as the Python interpreter is concerned):</p>
+<pre><code>#!/usr/bin/env python</code></pre></li>
 </ul>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-scientific-python-software-stack">The scientific python software stack<a class="anchor-link" href="#The-scientific-python-software-stack">&#182;</a></h3>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/scientific-python-stack.svg" width="300"></p>
-</div>
-    </div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="python-environments">Python Environments</h2>
-<ul>
-<li>Python also refers to the <strong>standard implementation of the interpreter</strong></li>
-<li>(technically referred to as <a href="http://en.wikipedia.org/wiki/CPython">CPython</a>)<br /></li>
-<li><p>The interpreter runs the python code on a computer.</p></li>
-<li><p><strong>Different environments</strong> through wich Python can be used allowing different workflows</p></li>
-<li><p>One strength of python is that it <strong>versatile</strong> and can be used in <strong>complementary ways</strong>, but it can be confusing for beginners so we will start with a brief survey of python environments that are useful for scientific computing.</p></li>
-</ul>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Python-interpreter">Python interpreter<a class="anchor-link" href="#Python-interpreter">&#182;</a></h3>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The standard way to use the Python programming language is to use the Python interpreter to run python code. The python interpreter is a program that read and execute the python code in files passed to it as arguments. At the command prompt, the command <code>python</code> is used to invoke the Python interpreter.</p>
-<p>For example, to run a file <code>my-program.py</code> that contains python code from the command prompt, use::</p>
-<pre><code>$ python my-program.py</code></pre>
-<p>We can also start the interpreter by simply typing <code>python</code> at the command line, and interactively type python code into the interpreter.</p>
-<p><img src="images/python-screenshot.jpg" width="600"></p>
-<p>This is often how we want to work when developing scientific applications, or when doing small calculations. But the standard python interpreter is not very convenient for this kind of work, due to a number of limitations.</p>
-</div>
-    </div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="IPython">IPython<a class="anchor-link" href="#IPython">&#182;</a></h3>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>IPython is an interactive shell that addresses the limitation of the standard python interpreter, and it is a work-horse for scientific use of python. It provides an interactive prompt to the python interpreter with a greatly improved user-friendliness.</p>
-<p><img src="images/ipython-screenshot.jpg" width="600"> <!--<img src="https://raw.github.com/jrjohansson/scientific-python-lectures/master/images/ipython-screenshot.jpg" width="600">
---> Some of the many useful features of IPython includes:</p>
-<ul>
-<li>Command history, which can be browsed with the up and down arrows on the keyboard.</li>
-<li>Tab auto-completion.</li>
-<li>In-line editing of code.</li>
-<li>Object introspection, and automatic extract of documentation strings from python objects like classes and functions.</li>
-<li>Good interaction with operating system shell.</li>
-<li>Support for multiple parallel back-end processes, that can run on computing clusters or cloud services like Amazon EE2.</li>
-</ul>
-</div>
-    </div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="IPython-notebook">IPython notebook<a class="anchor-link" href="#IPython-notebook">&#182;</a></h3>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://ipython.org/notebook.html">IPython notebook</a> is an HTML-based notebook environment for Python, similar to Mathematica or Maple. It is based the IPython shell, but provides a cell-based environment with great interactivity, where calculations can be organized documented in a structured way.</p>
-<p><img src="images/ipython-notebook-screenshot.jpg" width="800"> <!--<img src="https://raw.github.com/jrjohansson/scientific-python-lectures/master/images/ipython-notebook-screenshot.jpg" width="800">
---> Although using the a web browser as graphical interface, IPython notebooks are usually run locally, from the same computer that run the browser. To start a new IPython notebook session, run the following command:</p>
-<pre><code>$ ipython notebook</code></pre>
-<p>from a directory where you want the notebooks to be stored. This will open a new browser window (or a new tab in an existing window) with an index page where existing notebooks are shown and from which new notebooks can be created.</p>
-</div>
-    </div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Spyder">Spyder<a class="anchor-link" href="#Spyder">&#182;</a></h3>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://code.google.com/p/spyderlib/">Spyder</a> is a MATLAB-like IDE for scientific computing with python. It has the many advantages of a traditional IDE environment, for example that everything from code editing, execution and debugging is carried out in a single environment, and work on different calculations can be organized as projects in the IDE environment.</p>
-<p><img src="images/spyder-screenshot.jpg" width="800"> <!--<img src="https://raw.github.com/jrjohansson/scientific-python-lectures/master/images/spyder-screenshot.jpg" width="800">
---> Some advantages of Spyder:</p>
-<ul>
-<li>Powerful code editor, with syntax high-lighting, dynamic code introspection and integration with the python debugger.</li>
-<li>Variable explorer, IPython command prompt.</li>
-<li>Integrated documentation and help.</li>
-</ul>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Versions-of-Python">Versions of Python<a class="anchor-link" href="#Versions-of-Python">&#182;</a></h2>
-</div>
-<div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Two Version of Python</p>
-<ul>
-<li>Python 2 (2.7 still contains the majority of libraries)</li>
-<li>Python 3 (not backward compatible)</li>
-</ul>
-<p>We will use Python 2.7 for this lecture</p>
-<p>To see which version of Python you have, run</p>
-<pre><code>$ python --version
-Python 2.7.3
-
-
-$ python3.2 --version
-Python 3.2.3</code></pre>
-<p>Several versions of Python can be installed in parallel, as shown above.</p>
-</div>
-    </div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="linux">Linux</h3>
-<p>In Ubuntu Linux, to installing python and all the requirements run:</p>
-<pre><code>$sudo apt-get install python ipython ipython-notebook$ sudo apt-get install python-numpy python-scipy python-matplotlib python-sympy</code></pre>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="macos-x">MacOS X</h3>
-<p><em>Macports</em></p>
-<p>Python is included by default in Mac OS X, but for our purposes it will be useful to install a new python environment using <a href="http://www.macports.org/">Macports</a>, because it makes it much easier to install all the required additional packages. Using Macports, we can install what we need with:</p>
-<pre><code>$sudo port install py27-ipython +pyside+notebook+parallel+scientific$ sudo port install py27-scipy py27-matplotlib py27-sympy
-$ sudo port install py27-spyder</code></pre>
-<p>These will associate the commands <code>python</code> and <code>ipython</code> with the versions installed via macports (instead of the one that is shipped with Mac OS X), run the following commands:</p>
-<pre><code>$sudo port select python python27$ sudo port select ipython ipython27</code></pre>
-<p><em>Fink</em></p>
-<p>Or, alternatively, you can use the <a href="http://www.finkproject.org/">Fink</a> package manager. After installing Fink, use the following command to install python and the packages that we need:</p>
-<pre><code>$sudo fink install python27 ipython-py27 numpy-py27 matplotlib-py27 scipy-py27 sympy-py27$ sudo fink install spyder-mac-py27</code></pre>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="windows">Windows</h3>
-<p>Windows lacks a good packaging system, so the easiest way to setup a Python environment is to install a pre-packaged distribution. Some good alternatives are:</p>
-<ul>
-<li><a href="http://www.enthought.com/products/epd.php">Enthought Python Distribution</a>. EPD is a commercial product but is available free for academic use.</li>
-<li><a href="http://continuum.io/downloads.html">Anaconda CE</a>. Anaconda Pro is a commercial product, but Anaconda Community Edition is free.</li>
-<li><a href="http://code.google.com/p/pythonxy/">Python(x,y)</a>. Fully open source.</li>
-</ul>
-<h4 id="note">Note</h4>
-<p>EPD and Anaconda CE are also available for Linux and Max OS X.</p>
+<p>If we do, and if we additionally set the file script to be executable, we can <strong>run the program like this</strong>:</p>
 </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="modules">Modules</h2>
+<p>Most of the functionality in Python is provided by <em>modules</em>.</p>
+<p>The Python Standard Library is a large collection of modules that provides <em>cross-platform</em> implementations of common facilities such as access to the operating system, file I/O, string management, network communication, and much more.</p>
+<h3 id="references">References</h3>
+<ul>
+<li>The Python Language Reference: http://docs.python.org/2/reference/index.html</li>
+<li>The Python Standard Library: http://docs.python.org/2/library/</li>
+</ul>
+<h3 id="general">General</h3>
+<ul>
+<li><strong>Moduls are files</strong> with containing Python code (e.g. myprogram.py)</li>
+<li>To use a module in a Python program it first has to be <strong>imported</strong>.</li>
+<li>A module can be imported using the <strong><code>import</code> statement</strong></li>
+<li>All functions and variables of a modul can be either imported to the current namespace and accessed directly or accessed with the syntax <code>module.function</code> syntax</li>
+</ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="modules-example">Modules Example</h3>
+<p>For example, to import the module <code>math</code>, which contains many standard mathematical functions, we can do:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Imports the <strong>whole module</strong> and makes it available under <strong>the moduls namespace</strong>. For example, we can do:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+1.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note: Contrary to Java a python file can contain classes, variables, function and main code. The filename defines the module name and the namespace to access the functions</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="import-all-functions-into-the-current-namespace">Import all functions into the current namespace</h3>
+<p>Alternatively, we can chose to <strong>import all symbols (functions and variables)</strong> in a module to the current namespace (so that we don't need to use the prefix &quot;<code>math.</code>&quot; every time we use something from the <code>math</code> module:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+1.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Be careful with <strong>namespace conflicts</strong> in large programs</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="import-selected-functions-into-the-current-namespace">Import selected functions into the current namespace</h3>
+<p>Selective import of function from a module</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+1.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="change-the-name-on-import">Change the name on import</h3>
+<p>Names of variables, functions and moduls can be changed at during import using the <code>as</code> keyword</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span> <span class="k">as</span> <span class="n">c</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span> <span class="k">as</span> <span class="n">p</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="kn">as</span> <span class="nn">m</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1.0, 1.0)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that readability may suffer.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="looking-at-what-a-module-contains">Looking at what a module contains</h3>
+<p>Once a module is imported, we can list the symbols it provides using the <code>dir</code> function:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;__doc__&apos;, &apos;__file__&apos;, &apos;__name__&apos;, &apos;__package__&apos;, &apos;acos&apos;, &apos;acosh&apos;, &apos;asin&apos;, &apos;asinh&apos;, &apos;atan&apos;, &apos;atan2&apos;, &apos;atanh&apos;, &apos;ceil&apos;, &apos;copysign&apos;, &apos;cos&apos;, &apos;cosh&apos;, &apos;degrees&apos;, &apos;e&apos;, &apos;erf&apos;, &apos;erfc&apos;, &apos;exp&apos;, &apos;expm1&apos;, &apos;fabs&apos;, &apos;factorial&apos;, &apos;floor&apos;, &apos;fmod&apos;, &apos;frexp&apos;, &apos;fsum&apos;, &apos;gamma&apos;, &apos;hypot&apos;, &apos;isinf&apos;, &apos;isnan&apos;, &apos;ldexp&apos;, &apos;lgamma&apos;, &apos;log&apos;, &apos;log10&apos;, &apos;log1p&apos;, &apos;modf&apos;, &apos;pi&apos;, &apos;pow&apos;, &apos;radians&apos;, &apos;sin&apos;, &apos;sinh&apos;, &apos;sqrt&apos;, &apos;tan&apos;, &apos;tanh&apos;, &apos;trunc&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="getting-help-on-a-function">Getting Help on a Function</h3>
+<p>And using the function <code>help</code> we can get a description of each function (almost .. not all functions have docstrings, as they are technically called, but the vast majority of functions are documented this way).</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Help on built-in function log in module math:
+
+log(...)
+    log(x[, base])
+    
+    Return the logarithm of x to the given base.
+    If the base not specified, returns the natural logarithm (base e) of x.
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[12]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+2.302585092994046
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[13]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+3.3219280948873626
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="getting-help-on-a-module">Getting Help on a Module</h3>
+<p>Use <code>help</code> function directly on modules:</p>
+<pre><code>help(math) </code></pre>
+<p>Some very useful modules form the Python standard library are</p>
+<ul>
+<li><code>os</code></li>
+<li><code>sys</code></li>
+<li><code>math</code></li>
+<li><code>shutil</code></li>
+<li><code>re</code></li>
+<li><code>subprocess</code></li>
+<li><code>multiprocessing</code></li>
+<li><code>threading</code>.</li>
+</ul>
+<p>A complete lists of standard modules for Python 2 and Python 3 are available at http://docs.python.org/2/library/ and http://docs.python.org/3/library/, respectively.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="variables-and-types">Variables and types</h2>
+<h3 id="symbol-names">Symbol names</h3>
+<ul>
+<li><strong>Variable names</strong> contain
+<ul>
+<li>alphanumerical characters <code>a-z</code>, <code>A-Z</code>, <code>0-9</code></li>
+<li>some special characters such as <code>_</code>.</li>
+<li>Normal variable names must start with a letter.</li>
+<li>Hidden variables and class variables start with <code>__</code></li>
+</ul></li>
+<li><em>_ By convention</em>_
+<ul>
+<li>variable names start with a lower-case letter</li>
+<li>Class names start with a capital letter.</li>
+</ul></li>
+<li><p><strong>Python keywords</strong> not usable as varialbe names:</p>
+<p>and, as, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield</p></li>
+</ul>
+<p>Note: Be aware of the keyword <code>lambda</code>, which could easily be a natural variable name in a scientific program. But being a keyword, it cannot be used as a variable name.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="assignment">Assignment</h3>
+<p>The assignment operator in Python is <code>=</code>.</p>
+<p>Python is a <strong>dynamically typed</strong> language, so we do not need to specify the type of a variable when we create one.</p>
+<p>Assigning a value to a new variable creates the variable:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[14]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># variable assignments</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="mf">12.2</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The type is derived form the value it was assigned (duck-typing)</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[15]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[15]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+float
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we assign a new value to a variable, its type can change.</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[16]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[17]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[17]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+int
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we try to use a variable that has not yet been defined we get an <code>NameError</code>:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[18]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-18-36b2093251cd&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span><span class="ansigreen">print</span><span class="ansiblue">(</span>y<span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansired">NameError</span>: name &apos;y&apos; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="fundamental-types">Fundamental types</h3>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[19]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># integers</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[19]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+int
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[20]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># float</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[20]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+float
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[21]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># boolean</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[21]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+bool
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[22]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># complex numbers: note the use of `j` to specify the imaginary part</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0j</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[22]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+complex
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[23]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1-1j)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[24]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1.0, -1.0)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="type-utility-functions">Type utility functions</h3>
+<p>The module <code>types</code> contains a number of type name definitions that can be used to test if variables are of certain types:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[25]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">types</span>
+
+<span class="c"># print all types defined in the `types` module</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">types</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;BooleanType&apos;, &apos;BufferType&apos;, &apos;BuiltinFunctionType&apos;, &apos;BuiltinMethodType&apos;, &apos;ClassType&apos;, &apos;CodeType&apos;, &apos;ComplexType&apos;, &apos;DictProxyType&apos;, &apos;DictType&apos;, &apos;DictionaryType&apos;, &apos;EllipsisType&apos;, &apos;FileType&apos;, &apos;FloatType&apos;, &apos;FrameType&apos;, &apos;FunctionType&apos;, &apos;GeneratorType&apos;, &apos;GetSetDescriptorType&apos;, &apos;InstanceType&apos;, &apos;IntType&apos;, &apos;LambdaType&apos;, &apos;ListType&apos;, &apos;LongType&apos;, &apos;MemberDescriptorType&apos;, &apos;MethodType&apos;, &apos;ModuleType&apos;, &apos;NoneType&apos;, &apos;NotImplementedType&apos;, &apos;ObjectType&apos;, &apos;SliceType&apos;, &apos;StringType&apos;, &apos;StringTypes&apos;, &apos;TracebackType&apos;, &apos;TupleType&apos;, &apos;TypeType&apos;, &apos;UnboundMethodType&apos;, &apos;UnicodeType&apos;, &apos;XRangeType&apos;, &apos;__builtins__&apos;, &apos;__doc__&apos;, &apos;__file__&apos;, &apos;__name__&apos;, &apos;__package__&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[26]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c"># check if the variable x is a float</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">float</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[26]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[27]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># check if the variable x is an int</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[27]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+False
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also use the <code>isinstance</code> method for testing types of variables:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[28]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[28]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="type-casting">Type casting</h3>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[29]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1.5, &lt;type &apos;float&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[30]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1, &lt;type &apos;int&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[31]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">z</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+((1+0j), &lt;type &apos;complex&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[32]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-32-e719cc7b3e96&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>x <span class="ansiblue">=</span> float<span class="ansiblue">(</span>z<span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansired">TypeError</span>: can&apos;t convert complex to float</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="complex-numbers">Complex Numbers</h4>
+<p>Complex variables cannot be cast to floats or integers. We need to use <code>z.real</code> or <code>z.imag</code> to extract the part of the complex number we want:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[33]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(1.0, &apos; -&gt; &apos;, True, &lt;type &apos;bool&apos;&gt;)
+(0.0, &apos; -&gt; &apos;, False, &lt;type &apos;bool&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="operators-and-comparisons">Operators and comparisons</h2>
+<p>Most operators and comparisons in Python work as one would expect. We will briefly outline the following operators</p>
+<ul>
+<li>Arithmetic Operators</li>
+<li>Boolean Operators</li>
+<li>Comparison Operators</li>
+</ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="arithmetic-operators">Arithmetic Operators</h3>
+<ul>
+<li>Arithmetic operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code> (integer division), '**' power</li>
+</ul>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[34]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[34]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(3, -1, 2, 0)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[35]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">2.0</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[35]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(3.0, -1.0, 2.0, 0.5)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[36]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Integer division of float numbers</span>
+<span class="mf">3.0</span> <span class="o">//</span> <span class="mf">2.0</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[36]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+1.0
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[37]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Note! The power operators in python isn&#39;t ^, but **</span>
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[37]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+4
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="boolean-operators">Boolean Operators</h3>
+<ul>
+<li>The boolean operators are spelled out as words <code>and</code>, <code>not</code>, <code>or</code>.</li>
+</ul>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[38]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[38]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+False
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[39]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="ow">not</span> <span class="bp">False</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[39]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[40]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[40]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="comparison-operators">Comparison Operators</h3>
+<ul>
+<li>Comparison operators <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> (greater or equal), <code>&lt;=</code> (less or equal), <code>==</code> equality, <code>is</code> identical.</li>
+</ul>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[41]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[41]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(True, False)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[42]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[42]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(False, False)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[43]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[43]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(True, True)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[44]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># equality</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[44]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[45]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># objects identical?</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">l1</span> <span class="ow">is</span> <span class="n">l2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[45]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+True
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="compound-types">Compound types:</h2>
+<p>Python provides a large set of fast, easy to use compound types. In particular</p>
+<ul>
+<li>Strings</li>
+<li>List (mutable arrays)</li>
+<li>Tupel (inmutable Lists)</li>
+<li>Dictionaries (Maps)</li>
+</ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="strings">Strings</h3>
+<p>Strings are the variable type that is used for storing text messages.</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[46]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello world&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[46]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+str
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[47]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># length of the string: the number of characters</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[47]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+11
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[48]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># replace a substring in a string with somethign else</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span> <span class="s">&quot;test&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Hello test
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can index a character in a string using <code>[]</code>:</p>
+<p><strong>Note:</strong> Indexing start at 0!</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[49]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[49]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;H&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="basic-indexing">Basic Indexing</h4>
+<p>We can extract a part of a string using the syntax <code>[start:stop]</code>, which extracts characters between index <code>start</code> and <code>stop</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[50]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[50]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hello&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we omit either (or both) of <code>start</code> or <code>stop</code> from <code>[start:stop]</code>, the default is the beginning and the end of the string, respectively:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[51]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[51]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hello&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[52]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[52]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;world&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[53]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[:]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[53]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hello world&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="advanced-indexing-using">Advanced Indexing using :</h4>
+<p>Define the step size using the syntax <strong><code>[start:end:step]</code></strong> (the default value for <code>step</code> is 1, as we saw above):</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[54]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[::</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[54]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hello world&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[55]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[55]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hlowrd&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This technique is called <em>slicing</em>. Read more about the syntax here: http://docs.python.org/release/2.7.3/library/functions.html?highlight=slice#slice</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python has a very rich set of functions for text processing. See for example http://docs.python.org/2/library/string.html for more information.</p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="string-formatting-examples">String formatting examples</h4>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[56]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;str1&quot;</span><span class="p">,</span> <span class="s">&quot;str2&quot;</span><span class="p">,</span> <span class="s">&quot;str3&quot;</span><span class="p">)</span>  <span class="c"># The print statement concatenates strings with a space</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(&apos;str1&apos;, &apos;str2&apos;, &apos;str3&apos;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[57]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;str1&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="o">-</span><span class="mi">1j</span><span class="p">)</span>  <span class="c"># The print statements converts all arguments to strings</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(&apos;str1&apos;, 1.0, False, -1j)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[58]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;str1&quot;</span> <span class="o">+</span> <span class="s">&quot;str2&quot;</span> <span class="o">+</span> <span class="s">&quot;str3&quot;</span><span class="p">)</span> <span class="c"># strings added with + are concatenated without space</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+str1str2str3
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[59]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;value = </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="mf">1.0</span><span class="p">)</span>       <span class="c"># we can use C-style string formatting</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+value = 1.000000
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[60]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># this formatting creates a string</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;value1 = </span><span class="si">%.2f</span><span class="s">. value2 = </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+value1 = 3.14. value2 = 1
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[61]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># alternative, more intuitive way of formatting a string </span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s">&#39;value1 = {0}, value2 = {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+value1 = 3.1415, value2 = 1.5
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="list">List</h3>
+<p>Lists are very similar to strings, except that <strong>each element can be of any type.</strong></p>
+<p>The syntax for creating lists in Python is <code>[...]</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[62]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+&lt;type &apos;list&apos;&gt;
+[1, 2, 3, 4]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <code>help(list)</code> for more details, or read the online documentation</p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="list-indexing">List Indexing</h4>
+<p>We can use the <strong>same slicing techniques</strong> to manipulate lists as we could use on <strong>strings</strong>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[63]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[1, 2, 3, 4]
+[2, 3]
+[1, 3]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Noe:</strong> Indexing starts at 0!</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[64]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[64]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+1
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="heterogeneous-types-and-nesting">Heterogeneous Types and Nesting</h4>
+<p>Elements in a list do not all have to be of the same type:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[65]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1j</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[1, &apos;a&apos;, 1.0, (1-1j)]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python lists can be inhomogeneous and arbitrarily nested:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[66]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">]]]]]</span>
+
+<span class="n">nested_list</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[66]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[1, [2, [3, [4, [5]]]]]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="lists-and-flow-control">Lists and flow control</h4>
+<p>Lists play a very important role in Python, and are for example used in loops and other flow control structures (discussed below). There are number of convenient functions for generating lists of various types, for example the <code>range</code> function:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[67]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">start</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[67]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[68]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># in python 3 range generates an interator, which can be converted to a list using &#39;list(...)&#39;. It has no effect in python 2</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[68]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[69]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[69]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[70]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">s</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[70]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&apos;Hello world&apos;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[71]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># convert a string to a list by type casting:</span>
+
+<span class="n">s2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">s2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[71]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o&apos;, &apos; &apos;, &apos;w&apos;, &apos;o&apos;, &apos;r&apos;, &apos;l&apos;, &apos;d&apos;]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[72]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># sorting lists</span>
+<span class="n">s2</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos; &apos;, &apos;H&apos;, &apos;d&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o&apos;, &apos;o&apos;, &apos;r&apos;, &apos;w&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="adding-inserting-modifying-and-removing-elements-from-lists">Adding, inserting, modifying, and removing elements from lists</h4>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[73]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># create a new empty list</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c"># add an elements using `append`</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;A&apos;, &apos;d&apos;, &apos;d&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can modify lists by assigning new values to elements in the list. In technical jargon, lists are <em>mutable</em>.</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[74]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;p&quot;</span>
+<span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;p&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;A&apos;, &apos;p&apos;, &apos;p&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[75]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;A&apos;, &apos;d&apos;, &apos;d&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="insert">Insert</h5>
+<p>Insert an element at an specific index using <code>insert</code></p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[76]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;i&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;n&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;s&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;t&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;i&apos;, &apos;n&apos;, &apos;s&apos;, &apos;e&apos;, &apos;r&apos;, &apos;t&apos;, &apos;A&apos;, &apos;d&apos;, &apos;d&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="remove">Remove</h5>
+<p>Remove first element with specific value using 'remove'</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[77]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;i&apos;, &apos;n&apos;, &apos;s&apos;, &apos;e&apos;, &apos;r&apos;, &apos;t&apos;, &apos;d&apos;, &apos;d&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remove an element at a specific location using <code>del</code>:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[78]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">del</span> <span class="n">l</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">l</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[&apos;i&apos;, &apos;n&apos;, &apos;s&apos;, &apos;e&apos;, &apos;r&apos;, &apos;t&apos;]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="tuples">Tuples</h3>
+<p>Tuples are like lists, except that they cannot be modified once created, that is they are <em>immutable</em>.</p>
+<p>In Python, tuples are created using the syntax <code>(..., ..., ...)</code>, or even <code>..., ...</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[79]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+((10, 20), &lt;type &apos;tuple&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[80]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">point</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+((10, 20), &lt;type &apos;tuple&apos;&gt;)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="unpacking-tuples">Unpacking tuples</h4>
+<p>We can unpack a tuple by assigning it to a comma-separated list of variables:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[81]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">point</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(&apos;x =&apos;, 10)
+(&apos;y =&apos;, 20)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="tuples-are-inmutable">Tuples are Inmutable</h5>
+<p>If we try to assign a new value to an element in a tuple we get an error:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[82]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-82-ac1c641a5dca&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>point<span class="ansiblue">[</span><span class="ansicyan">0</span><span class="ansiblue">]</span> <span class="ansiblue">=</span> <span class="ansicyan">20</span><span class="ansiblue"></span>
+
+<span class="ansired">TypeError</span>: &apos;tuple&apos; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Dictionaries are also like lists, except that each element is a key-value pair. The syntax for dictionaries is <code>{key1 : value1, ...}</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[83]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+          <span class="s">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
+          <span class="s">&quot;parameter3&quot;</span> <span class="p">:</span> <span class="mf">3.0</span><span class="p">,}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+&lt;type &apos;dict&apos;&gt;
+{&apos;parameter1&apos;: 1.0, &apos;parameter3&apos;: 3.0, &apos;parameter2&apos;: 2.0}
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[84]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter1 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter1&quot;</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter2 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter2&quot;</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter3 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter3&quot;</span><span class="p">]))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+parameter1 = 1.0
+parameter2 = 2.0
+parameter3 = 3.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[85]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;A&quot;</span>
+<span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;B&quot;</span>
+
+<span class="c"># add a new entry</span>
+<span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter4&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;D&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter1 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter1&quot;</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter2 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter2&quot;</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter3 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter3&quot;</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;parameter4 = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s">&quot;parameter4&quot;</span><span class="p">]))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+parameter1 = A
+parameter2 = B
+parameter3 = 3.0
+parameter4 = D
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="control-flow">Control Flow</h2>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="conditional-statements-if-elif-else">Conditional statements: if, elif, else</h3>
+<p>The Python syntax for conditional execution of code use the keywords <code>if</code>, <code>elif</code> (else if), <code>else</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[86]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">statement1</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">statement2</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;statement1 is True&quot;</span><span class="p">)</span>
+    
+<span class="k">elif</span> <span class="n">statement2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;statement2 is True&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;statement1 and statement2 are False&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+statement1 and statement2 are False
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="blocks-are-defined-by-indention">Blocks are defined by indention</h4>
+<p>For the first time, here we encounted a peculiar and unusual aspect of the Python programming language: Program blocks are defined by their indentation level.</p>
+<p>Compare to the equivalent C code:</p>
+<pre><code>if (statement1)
+{
+    printf(&quot;statement1 is True\n&quot;);
+}
+else if (statement2)
+{
+    printf(&quot;statement2 is True\n&quot;);
+}
+else
+{
+    printf(&quot;statement1 and statement2 are False\n&quot;);
+}</code></pre>
+<p>In C blocks are defined by the enclosing curly brakets <code>{</code> and <code>}</code>. And the level of indentation (white space before the code statements) does not matter (completely optional).</p>
+<p>But in Python, the extent of a code block is defined by the indentation level (usually a tab or say four white spaces). This means that we have to be careful to indent our code correctly, or else we will get syntax errors.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="if-example---blocks-by-indention">IF Example - Blocks by indention</h4>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[87]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">statement1</span> <span class="o">=</span> <span class="n">statement2</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">statement2</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;both statement1 and statement2 are True&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+both statement1 and statement2 are True
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[88]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Bad indentation!</span>
+<span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">statement2</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;both statement1 and statement2 are True&quot;</span><span class="p">)</span>  <span class="c"># this line is not properly indented</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+both statement1 and statement2 are True
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[89]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">statement1</span> <span class="o">=</span> <span class="bp">False</span> 
+
+<span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;printed if statement1 is True&quot;</span><span class="p">)</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;still inside the if block&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[90]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">if</span> <span class="n">statement1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;printed if statement1 is True&quot;</span><span class="p">)</span>
+    
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;now outside the if block&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+now outside the if block
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="loops">Loops</h2>
+<p>In Python, loops can be programmed in a number of different ways. The most common is the <code>for</code> loop, which is used together with iterable objects, such as lists. The basic syntax is:</p>
+<p><strong><code>for</code> loops</strong>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[91]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+1
+2
+3
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="counting-for-loops">Counting for loops</h3>
+<p>The <code>for</code> loop iterates over the elements of the supplied list, and executes the containing block once for each element. Any kind of list can be used in the <code>for</code> loop. For example:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[92]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="c"># by default range start at 0</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0
+1
+2
+3
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note: <code>range(4)</code> does not include 4 !</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[93]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+-3
+-2
+-1
+0
+1
+2
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[94]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;scientific&quot;</span><span class="p">,</span> <span class="s">&quot;computing&quot;</span><span class="p">,</span> <span class="s">&quot;with&quot;</span><span class="p">,</span> <span class="s">&quot;python&quot;</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+scientific
+computing
+with
+python
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="iterating-over-dictionaries">Iterating over Dictionaries</h4>
+<p>To iterate over key-value pairs of a dictionary:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[95]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+parameter4 = D
+parameter1 = A
+parameter3 = 3.0
+parameter2 = B
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes it is useful to have access to the indices of the values when iterating over a list. We can use the <code>enumerate</code> function for this:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[96]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+(0, -3)
+(1, -2)
+(2, -1)
+(3, 0)
+(4, 1)
+(5, 2)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>List comprehensions: Creating lists using <code>for</code> loops</strong>:</p>
+<p>A convenient and compact way to initialize lists:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[97]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[0, 1, 4, 9, 16]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>List comprehensions can be conditional (and hence very powerful especially when working with data structures!)</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+[0, 1, 4]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><code>while</code> loops</strong>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[98]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+0
+1
+2
+3
+4
+done
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the <code>print(&quot;done&quot;)</code> statement is not part of the <code>while</code> loop body because of the difference in indentation.</p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="functions">Functions</h2>
+<p>A function in Python is defined using the keyword <code>def</code>, followed by a function name, a signature within parenthises <code>()</code>, and a colon <code>:</code>. The following code, with one additional level of indentation, is the function body.</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[99]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">func0</span><span class="p">():</span>   
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[100]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">func0</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+test
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="documenting-a-function">Documenting a function</h4>
+<p>Optionally, but highly recommended, we can define a so called &quot;docstring&quot;, which is a description of the functions purpose and behaivor. The docstring should follow directly after the function definition, before the code in the function body.</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[101]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Print a string &#39;s&#39; and tell how many characters it has    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="s">&quot; has &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; characters&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[102]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">func1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Help on function func1 in module __main__:
+
+func1(s)
+    Print a string &apos;s&apos; and tell how many characters it has
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[103]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">func1</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+test has 4 characters
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="returning-values">Returning values</h4>
+<p>Functions that returns a value use the <code>return</code> keyword to return <strong>any object or function</strong>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[104]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the square of x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[105]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[105]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+16
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="returning-multiple-values">Returning Multiple Values</h4>
+<p>We can return multiple values from a function using tuples (see above):</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[106]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">powers</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a few powers of x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">4</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[107]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">powers</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[107]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(9, 27, 81)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[108]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span> <span class="o">=</span> <span class="n">powers</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+27
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="default-argument-and-keyword-arguments">Default argument and keyword arguments</h3>
+<p>In a definition of a function, we can give default values to the arguments the function takes:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[109]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;evaluating myfunc for x = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; using exponent p = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="n">p</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we don't provide a value of the <code>debug</code> argument when calling the the function <code>myfunc</code> it defaults to the value provided in the function definition:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[110]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">myfunc</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[110]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+25
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[111]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">myfunc</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+evaluating myfunc for x = 5 using exponent p = 2
+
+</pre>
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[111]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+25
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="keyword-argument">Keyword Argument</h4>
+<p>If we explicitly list the name of the arguments in the function calls, they do not need to come in the same order as in the function definition.</p>
+<p>This is called <em>keyword</em> arguments, and is often very useful in functions that takes a lot of optional arguments.</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[112]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">myfunc</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+evaluating myfunc for x = 7 using exponent p = 3
+
+</pre>
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[112]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+343
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="unnamed-functions-lambda-function">Unnamed functions (lambda function)</h3>
+<p>In Python we can also create unnamed functions, using the <code>lambda</code> keyword:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[113]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    
+<span class="c"># is equivalent to </span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[114]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[114]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+(4, 4)
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="lambda-functions-as-argument">(Lambda) Functions as Argument</h4>
+<p>This technique is useful for exmample when we want to pass a simple function as an argument to another function, like this:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[115]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># map is a built-in python function</span>
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[115]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[9, 4, 1, 0, 1, 4, 9]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[116]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># in python 3 we can use `list(...)` to convert the iterator to an explicit list</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[116]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+[9, 4, 1, 0, 1, 4, 9]
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="classes">Classes</h2>
+<p>Classes are the key features of object-oriented programming.</p>
+<p>A class is a structure for representing an object and the operations that can be performed on the object.</p>
+<p>A class can contain <em>attributes</em> (variables) and <em>methods</em> (functions).</p>
+<p>A class is defined using the <code>class</code> keyword plus a number of class method definitions (a function in a class).</p>
+<ul>
+<li><p>Each class method should have <strong>an argurment <code>self</code></strong> as it first argument. This object is a self-reference.</p></li>
+<li><p>Some class method names have special meaning, for example:</p></li>
+<li><code>__init__</code>: The name of the method that is invoked when the object is first created.</li>
+<li><code>__str__</code> : A method that is invoked when a simple string representation of the class is needed, as for example when printed.</li>
+<li><p>There are many more, see http://docs.python.org/2/reference/datamodel.html#special-method-names</p></li>
+</ul>
+</div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[117]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simple class for representing a point in a Cartesian coordinate system.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new Point at x, y.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Translate the point by dx and dy in the x and y direction.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+        
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span><span class="p">(</span><span class="s">&quot;Point at [</span><span class="si">%f</span><span class="s">, </span><span class="si">%f</span><span class="s">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="instance-creation">Instance Creation</h3>
+<p>To create a new instance of a class:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[118]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c"># this will invoke the __init__ method in the Point class</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>         <span class="c"># this will invode the __str__ method</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Point at [0.000000, 0.000000]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To invoke a class method in the class instance <code>p</code>:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[119]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">p1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Point at [0.250000, 1.500000]
+Point at [1.000000, 1.000000]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that calling class methods can modifiy the state of that particular class instance, but does not effect other class instances or any global variables.</p>
+<p>That is one of the nice things about object-oriented design: code such as functions and related variables are grouped in separate and independent entities.</p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="modules">Modules</h2>
+<p>One of the most important concepts in good programming is to reuse code and avoid repetitions.</p>
+<p>The idea is to write functions and classes with a well-defined purpose and scope, and reuse these instead of repeating similar code in different part of a program (modular programming). The result is usually that readability and maintainability of a program is greatly improved. What this means in practice is that our programs have fewer bugs, are easier to extend and debug/troubleshoot.</p>
+<p>Python supports modular programming at different levels. Functions and classes are examples of tools for low-level modular programming. Python modules are a higher-level modular programming construct, where we can collect related variables, functions and classes in a module. A python module is defined in a python file (with file-ending <code>.py</code>), and it can be made accessible to other Python modules and programs using the <code>import</code> statement.</p>
+<p>Consider the following example: the file <code>mymodule.py</code> contains simple example implementations of a variable, function and a class:</p>
+</div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[120]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">file</span> <span class="n">mymodule</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example of a python module. Contains a variable called my_variable,</span>
+<span class="sd">a function called my_function, and a class called MyClass.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">my_variable</span>
+    
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="n">my_variable</span>
+        
+    <span class="k">def</span> <span class="nf">set_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set self.variable to a new value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="n">new_value</span>
+        
+    <span class="k">def</span> <span class="nf">get_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Overwriting mymodule.py
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="use-of-moduls-through-import">Use of Moduls through Import</h3>
+<p>We can import the module <code>mymodule</code> into our Python program using <code>import</code>:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[121]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">mymodule</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use <code>help(module)</code> to get a summary of what the module provides:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[122]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">mymodule</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Help on module mymodule:
+
+NAME
+    mymodule
+
+FILE
+    /Users/rob/Desktop/scientific-python-lectures/mymodule.py
+
+DESCRIPTION
+    Example of a python module. Contains a variable called my_variable,
+    a function called my_function, and a class called MyClass.
+
+CLASSES
+    MyClass
+    
+    class MyClass
+     |  Example class.
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self)
+     |  
+     |  get_variable(self)
+     |  
+     |  set_variable(self, new_value)
+     |      Set self.variable to a new value
+
+FUNCTIONS
+    my_function()
+        Example function
+
+DATA
+    my_variable = 0
+
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[123]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">mymodule</span><span class="o">.</span><span class="n">my_variable</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[123]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+0
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[124]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">mymodule</span><span class="o">.</span><span class="n">my_function</span><span class="p">()</span> 
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[124]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+0
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[125]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">my_class</span> <span class="o">=</span> <span class="n">mymodule</span><span class="o">.</span><span class="n">MyClass</span><span class="p">()</span> 
+<span class="n">my_class</span><span class="o">.</span><span class="n">set_variable</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">my_class</span><span class="o">.</span><span class="n">get_variable</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[125]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+10
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we make changes to the code in <code>mymodule.py</code>, we need to reload it using <code>reload</code>:</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[126]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="nb">reload</span><span class="p">(</span><span class="n">mymodule</span><span class="p">)</span>  <span class="c"># work only in python 2</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[126]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>
+&lt;module &apos;mymodule&apos; from &apos;mymodule.pyc&apos;&gt;
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="exceptions">Exceptions</h2>
+<p>In Python errors are managed with a special language construct called &quot;Exceptions&quot;. When errors occur exceptions can be raised, which interrupts the normal program flow and fallback to somewhere else in the code where the closest try-except statements is defined.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>### Generating Exceptions</p>
+<p>To generate an exception we can use the <code>raise</code> statement, which takes an argument that must be an instance of the class <code>BaseExpection</code> or a class derived from it.</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[127]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;description of the error&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_pyerr">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">Exception</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-127-8f47ba831d5a&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span><span class="ansigreen">raise</span> Exception<span class="ansiblue">(</span><span class="ansiblue">&quot;description of the error&quot;</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansired">Exception</span>: description of the error</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A typical use of exceptions is to abort functions when some error condition occurs, for example:</p>
+<pre><code>def my_function(arguments):
+
+    if not verify(arguments):
+        raise Expection(&quot;Invalid arguments&quot;)
+    
+    # rest of the code goes here</code></pre>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="catching-exception">Catching Exception</h3>
+<p>To gracefully catch errors that are generated by functions and class methods, or by the Python interpreter itself, use the <code>try</code> and <code>except</code> statements:</p>
+<pre><code>try:
+    # normal code goes here
+except:
+    # code for error handling goes here
+    # this code is not executed unless the code
+    # above generated an error</code></pre>
+<p>For example:</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[128]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+    <span class="c"># generate an error: the variable test is not defined</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Caught an expection&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+test
+Caught an expection
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="message-of-an-exception">Message of an Exception</h3>
+<p>To get information about the error, we can access the <code>Exception</code> class instance that describes the exception by using for example:</p>
+<pre><code>except Exception as e:</code></pre>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[129]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+    <span class="c"># generate an error: the variable test is not defined</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Caught an exception:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+test
+Caught an exception:name &apos;test&apos; is not defined
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="further-reading">Further reading</h2>
 <ul>
-<li><a href="http://www.python.org&gt;">Python</a>. The official Python web site.</li>
-<li><a href="http://docs.python.org/2/tutorial/">Python tutorials</a>. The official Python tutorials.</li>
-<li><a href="http://www.greenteapress.com/thinkpython/">Think Python</a>. A free book on Python.</li>
+<li>http://www.python.org - The official web page of the Python programming language.</li>
+<li>http://www.python.org/dev/peps/pep-0008 - Style guide for Python programming. Highly recommended.</li>
+<li>http://www.greenteapress.com/thinkpython/ - A free book on Python programming.</li>
+<li><a href="http://www.amazon.com/Python-Essential-Reference-4th-Edition/dp/0672329786">Python Essential Reference</a> - A good reference book on Python programming.</li>
 </ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="versions">Versions</h3>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[130]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">IPython</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[131]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;This notebook was evaluated with: Python </span><span class="si">%s</span><span class="s"> and IPython </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="n">IPython</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+This notebook was evaluated with: Python 2.7.3 (default, Nov 17 2012, 19:54:34) 
+[GCC 4.2.1 Compatible Apple Clang 4.1 ((tags/Apple/clang-421.11.66))] and IPython 0.13.1.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section>
     </section>
 </div>
