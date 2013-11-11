@@ -46,7 +46,7 @@ Outline
       1.  Decision Tree Basics
       2.  Impurity Functions
       3.  Decision Tree Algorithms
-      	  1. [ID 3 in Python]((http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-DecisionTree.ipynb))
+      	  1. [ID 3 in Python](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Example-DecisionTree.ipynb)
       4.  Decision Tree Pruning
       
 
