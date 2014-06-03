@@ -29,13 +29,14 @@ Outline
    2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-2-Python-Programing-Basics.ipynb)
        1. [Exercise 2.1.: Python Standard Data Structures](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-2-1-Python%20Standard%20Data%20Structures.ipynb)
    3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-3-Numpy.ipynb)
-	  a. Alternatively you can go for a
+      1. Alternatively you can go for a
 	  [Short Introduction to Numpy](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-3a-Numpy-Short.ipynb)
 	  for the most basic things (without outlining any function)
+	  1. [Exercise 3.1. Data Structures and Operations in Numpy] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-3-1-Numpy.ipynb)
    4. Scipy in a Nutshell
    5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-5-Matplotlib.ipynb)
    6. [Pandas based Data Analysis](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-6-Pandas.ipynb)
-       a. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-6-1-Pandas-NYC-Open-Data.ipynb)
+       1. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-6-1-Pandas-NYC-Open-Data.ipynb)
 2. Part II: Machine Learning and Data Mining \[in Python\]
    1. Overview
    2. Machine Learning Basics
