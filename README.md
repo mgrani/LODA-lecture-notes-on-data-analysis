@@ -35,6 +35,7 @@ Outline
 	  1. [Exercise 3.1. Data Structures and Operations in Numpy] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-3-1-Numpy.ipynb)
    4. Scipy in a Nutshell
    5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-5-Matplotlib.ipynb)
+	   1. [Exercise SPiP-5-1-Analysing the Iris Dataset with Mathplotlib] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-5-1-Analysing%20the%20Iris%20Dataset%20with%20Mathplotlib-.ipynb)
    6. [Pandas based Data Analysis](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/SPiP-6-Pandas.ipynb)
        1. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-6-1-Pandas-NYC-Open-Data.ipynb)
 2. Part II: Machine Learning and Data Mining \[in Python\]
