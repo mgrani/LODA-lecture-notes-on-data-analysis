@@ -76,9 +76,9 @@ Outline
 
    8. Ensemble Classifiers
    9. Cluster Analysis
-      1. [Clustering with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM-Clustering-with-scikit-learn)
+      1. [Clustering with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Clustering-with-scikit-learn.ipynb)
    10. Dimensiontality Reduction and Manifold Learning
-      1. [Dimensionality Reduction and Manifold Learning with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM-Projection-and-Manifold-Learning-with-scikit-learn.ipynb)
+      1. [Dimensionality Reduction and Manifold Learning with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-Projection-and-Manifold-Learning-with-scikit-learn.ipynb)
    11. Association Rules
    12. Reinforcement Learning
    13. Deep Learning
