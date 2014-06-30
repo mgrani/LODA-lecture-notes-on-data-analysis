@@ -40,6 +40,8 @@ Outline
        1. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/1.SP-in-Python/exercises/Exercise%20SPiP-6-1-Pandas-NYC-Open-Data.ipynb)
 2. Part II: Machine Learning and Data Mining \[in Python\]
    1. Overview
+      1. [A mini introduction to sci-kit Learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM/2.ML-and-DM-An-short-introduction-to-sckit-learn.ipynb)
+
    2. Machine Learning Basics
 
       1. On the Data
@@ -74,8 +76,12 @@ Outline
 
    8. Ensemble Classifiers
    9. Cluster Analysis
-   10. Association Rules
-   11. Reinforcement Learning
+      1. [Clustering with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM-Clustering-with-scikit-learn)
+   10. Dimensiontality Reduction and Manifold Learning
+      1. [Dimensionality Reduction and Manifold Learning with scikit-learn](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/2.ML-and-DM-Projection-and-Manifold-Learning-with-scikit-learn.ipynb)
+   11. Association Rules
+   12. Reinforcement Learning
+   13. Deep Learning
 
 3. Part III. Signal Analysis and Data Preprocessing
 
