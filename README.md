@@ -88,6 +88,12 @@ Outline
 
 3. Part III. Signal Analysis and Data Preprocessing
 
+5. Part V. Web Mining Applications
+    1. [Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/
+       /V.Web-Mining-Applications/V.WMA-Crawling-Twitter.ipynb)
+	     1. [Exercise: Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/
+       /V.Web-Mining-Applications/exercises/Exercises%20Crawling%20Twitter%20with%20Python.ipynb)
+
 Helpful Links
 -
 
