@@ -31,10 +31,7 @@ Outline
    1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-1-Introduction.ipynb)
    2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-2-Python-Programing-Basics.ipynb)
        1. [Exercise 2.1.: Python Standard Data Structures](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-2-1-Python%20Standard%20Data%20Structures.ipynb)
-   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3-Numpy.ipynb)
-      1. Alternatively you can go for a
-	  [Short Introduction to Numpy](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3a-Numpy-Short.ipynb)
-	  for the most basic things (without outlining any function)
+   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3-Numpy.ipynb)      
 	  1. [Exercise 3.1. Data Structures and Operations in Numpy] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-3-1-Numpy.ipynb)
    4. Scipy in a Nutshell
    5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-5-Matplotlib.ipynb)
