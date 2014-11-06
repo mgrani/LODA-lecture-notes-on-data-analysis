@@ -83,7 +83,10 @@ Outline
    12. Reinforcement Learning
    13. Deep Learning
 
-3. Part III. Signal Analysis and Data Preprocessing
+2. Part III: Natural Language Processing \[in Python\]
+   1. [An Introduction to NLTK](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/III.NLP/III.NLP-with-NLTK-Short-Intro.ipynb)
+       1. [NLTK Exercise](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/III.NLP/exercise/III.NLTK-Intro-Exercise.ipynb)
+
 
 5. Part V. Web Mining Applications
     1. [Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/V.WMA-Crawling-Twitter.ipynb)
