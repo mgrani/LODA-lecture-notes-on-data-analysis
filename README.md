@@ -42,11 +42,8 @@ Outline
    1. Machine Learning in a Nutshell with scikit-learn
 
         1. [Overview and Preprocessing](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-overview-and-preprocessing.ipynb)
-
         2.[Supervised Learning: Classification and Regression](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-Supervised-Learning.ipynb)
-
         3.[Unsupervised Learning: Clustering](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-clustering.ipynb)
-
         4.[Unsupervised Learning: Projections and Manifolds](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-projections-and-manifold-learning.ipynb)
 
    2. Machine Learning Basics
