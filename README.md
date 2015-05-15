@@ -3,7 +3,7 @@ LODA-Lecture Notes on Data Analysis
 
 Lecture notes (in form of slides) and excercises in Python using ipython-notebook for teaching data and media analysis.
 It includes introductions to Python, Numpy, Scipy, Scikit-Learn, SimpleCV.
-It covers the topics Supervised/Unsupervised Learning, Signal Analysis, Image Analysis, Text and Web-Media Analysis. 
+It covers the topics Supervised/Unsupervised Learning, Signal Analysis, Image Analysis, Text and Web-Media Analysis.
 
 Presentation
 ============
@@ -13,10 +13,12 @@ The lecture notes are optimized for presentation. In order to use them, invoke
 
 to start the presentation (a browser window should open automatically).
 
+you can also try to get [livereveal.js](https://github.com/damianavila/live_reveal) up and running in your ipython environment.
+
 Acknowledgment
 ==============
 
-This work is largely based on a number of great tutorials and resources all over the web, compiled by great people from very different domains. Without their effort and their will to make their hard work open access, i would have not been able to compile this tutorial. The individual contributions are listed in the beginning of every part.  
+This work is largely based on a number of great tutorials and resources all over the web, compiled by great people from very different domains. Without their effort and their will to make their hard work open access, i would have not been able to compile this tutorial. The individual contributions are listed in the beginning of every part.
 
 
 Outline
@@ -31,7 +33,7 @@ Outline
    1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-1-Introduction.ipynb)
    2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-2-Python-Programing-Basics.ipynb)
        1. [Exercise 2.1.: Python Standard Data Structures](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-2-1-Python%20Standard%20Data%20Structures.ipynb)
-   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3-Numpy.ipynb)      
+   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3-Numpy.ipynb)
 	  1. [Exercise 3.1. Data Structures and Operations in Numpy] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/exercises/Exercise%20DSiP-3-1-Numpy.ipynb)
    4. Scipy in a Nutshell
    5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-5-Matplotlib.ipynb)
@@ -62,7 +64,7 @@ Outline
       3.  Decision Tree Algorithms
       	  1. [ID 3 in Python](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-Example-DecisionTree.ipynb)
       4.  Decision Tree Pruning
-      
+
 
    4. Statistical Learning
 
@@ -86,6 +88,7 @@ Outline
    11. Association Rules
    12. Reinforcement Learning
    13. Deep Learning
+      1. [Single Layered Autoencoder](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-Stacked-Denoising-Autoencoders.ipynb)
 
 2. Part III: Natural Language Processing \[in Python\]
    1. [An Introduction to NLTK](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/III.NLP/III.NLP-with-NLTK-Short-Intro.ipynb)
@@ -98,16 +101,16 @@ Outline
 		 2. [Project: Shitstorm Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Shitstorm-Detection-on-Twitter.ipynb)
 		 2. [Project: Topic Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Topic-Detection.ipynb)
 		 2. [Project: Web Crawling - Genre Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/web-crawling/V.WMA-Project-Web-Page-Genre-Classification.ipynb)
-		 
+
 
 Helpful Links
 -
 
-* [Python 101 Cheatsheet](http://nbviewer.ipython.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/Python_101.ipynb) 
-    
+* [Python 101 Cheatsheet](http://nbviewer.ipython.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/Python_101.ipynb)
+
 
 License
 =======
 
-This work is licesend under a Creative-Commons 3.0 license. 
+This work is licesend under a Creative-Commons 3.0 license.
 
