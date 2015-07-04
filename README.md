@@ -90,10 +90,12 @@ Outline
    13. Deep Learning
       1. [Single Layered Autoencoder](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-Stacked-Denoising-Autoencoders.ipynb)
 
-2. Part III: Natural Language Processing \[in Python\]
+3. Part III: Natural Language Processing \[in Python\]
    1. [An Introduction to NLTK](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/III.NLP/III.NLP-with-NLTK-Short-Intro.ipynb)
        1. [NLTK Exercise](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/III.NLP/exercise/III.NLTK-Intro-Exercise.ipynb)
 
+4. Part IV: Visual Analytics
+   1. [Information Visualisation with JavaScript and D3JS](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/IV.Visual-Analytics/IV.VA-InformationVisualisation-with-JavaScript-and-3DJs.ipynb)
 
 5. Part V. Web Mining Applications
     1. [Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/V.WMA-Crawling-Twitter.ipynb)
