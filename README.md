@@ -115,3 +115,10 @@ License
 
 This work is licesend under a Creative-Commons 3.0 license.
 
+Citation
+=======
+[![DOI](https://zenodo.org/badge/21848/mgrani/LODA-lecture-notes-on-data-analysis.svg)](https://zenodo.org/badge/latestdoi/21848/mgrani/LODA-lecture-notes-on-data-analysis)
+
+Powered by zenodo (Join and contribute your own open material)
+
+
