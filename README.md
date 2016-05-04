@@ -30,29 +30,29 @@ Outline
 
 1. Part I: Scientific Programming in Python
 
-   1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-1-Introduction.ipynb)
-   2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-2-Python-Programing-Basics.ipynb)
-       1. [Exercise 2.1.: Python Standard Data Structures](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-2-1-Python%20Standard%20Data%20Structures.ipynb)
-   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-3-Numpy.ipynb)
+   1. [Introduction](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/DSiP-1-Introduction.ipynb)
+   2. [Programming Basics](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/DSiP-2-Python-Programing-Basics.ipynb)
+       1. [Exercise 2.1.: Python Standard Data Structures](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/exercises/Exercise%20DSiP-2-1-Python%20Standard%20Data%20Structures.ipynb)
+   3. [Numpy in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/DSiP-3-Numpy.ipynb)
 	  1. [Exercise 3.1. Data Structures and Operations in Numpy] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/exercises/Exercise%20DSiP-3-1-Numpy.ipynb)
    4. Scipy in a Nutshell
-   5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-5-Matplotlib.ipynb)
-	   1. [Exercise DSiP-5-1-Analysing the Iris Dataset with Mathplotlib] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-5-1-Analysing%20the%20Iris%20Dataset%20with%20Mathplotlib-.ipynb)
-   6. [Pandas based Data Analysis](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/DSiP-6-Pandas.ipynb)
-       1. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I-Data-Science-in-Python/exercises/Exercise%20DSiP-6-1-Pandas-NYC-Open-Data.ipynb)
+   5. [Mathplotlib in a Nutshell](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/DSiP-5-Matplotlib.ipynb)
+	   1. [Exercise DSiP-5-1-Analysing the Iris Dataset with Mathplotlib] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/exercises/Exercise%20DSiP-5-1-Analysing%20the%20Iris%20Dataset%20with%20Mathplotlib-.ipynb)
+   6. [Pandas based Data Analysis](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/DSiP-6-Pandas.ipynb)
+       1. [Exercise 6.1. Analysing New York Open Data with Pandas] (http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/I.Data-Science-in-Python/exercises/Exercise%20DSiP-6-1-Pandas-NYC-Open-Data.ipynb)
 2. Part II: Machine Learning and Data Mining \[in Python\]
    1. Machine Learning in a Nutshell with scikit-learn
 
-        1. [Overview and Preprocessing](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-overview-and-preprocessing.ipynb)
-        2.[Supervised Learning: Classification and Regression](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-Supervised-Learning.ipynb)
-        3.[Unsupervised Learning: Clustering](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-clustering.ipynb)
-        4.[Unsupervised Learning: Projections and Manifolds](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-projections-and-manifold-learning.ipynb)
+       1. [Overview and Preprocessing](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-overview-and-preprocessing.ipynb)
+       2.[Supervised Learning: Classification and Regression](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-Supervised-Learning.ipynb)
+       3.[Unsupervised Learning: Clustering](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-clustering.ipynb)
+       4.[Unsupervised Learning: Projections and Manifolds](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-in-a-Nutshell-with-scikitlearn-projections-and-manifold-learning.ipynb)
 
    2. Machine Learning Basics
 
       1. On the Data
       2. Regression
-        - [A simple Example](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/2.ML-DM-Simple-Regression.ipynb)
+        - [A simple Example](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-DM-Simple-Regression.ipynb)
         - [Least Mean Square Algorithm - a Gradient Descent approach to regression](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-Example-LMS.ipynb)
         - [Regression and Classification - using the analytical solution](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/II.ML-and-DM/II.ML-and-DM-Example-Regression.ipynb)
       3. Concept Learning
