@@ -103,7 +103,7 @@ Outline
 		 2. [Project: Shitstorm Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Shitstorm-Detection-on-Twitter.ipynb)
 		 2. [Project: Topic Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Topic-Detection.ipynb)
 		 2. [Project: Web Crawling - Genre Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/web-crawling/V.WMA-Project-Web-Page-Genre-Classification.ipynb)
-
+ 
 
 Helpful Links
 -
