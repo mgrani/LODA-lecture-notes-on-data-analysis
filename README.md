@@ -97,12 +97,14 @@ Outline
 4. Part IV: Visual Analytics
    1. [Information Visualisation with JavaScript and D3JS](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/IV.Visual-Analytics/IV.VA-InformationVisualisation-with-JavaScript-and-3DJs.ipynb)
 
-5. Part V. Web Mining Applications
-    1. [Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/V.WMA-Crawling-Twitter.ipynb)
-	     1. [Exercise: Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/exercises/Exercises%20Crawling%20Twitter%20with%20Python.ipynb)
-		 2. [Project: Shitstorm Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Shitstorm-Detection-on-Twitter.ipynb)
-		 2. [Project: Topic Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/twitter/V.WMA-Project-Topic-Detection.ipynb)
-		 2. [Project: Web Crawling - Genre Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/V.Web-Mining-Applications/projects/web-crawling/V.WMA-Project-Web-Page-Genre-Classification.ipynb)
+5. Part V: Social Network Analysis
+
+5. Part X. Web Mining Applications
+    1. [Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/X.Web-Mining-Applications/V.WMA-Crawling-Twitter.ipynb)
+	     1. [Exercise: Crawling and Analysing Twitter](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/X.Web-Mining-Applications/exercises/Exercises%20Crawling%20Twitter%20with%20Python.ipynb)
+		 2. [Project: Shitstorm Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/X.Web-Mining-Applications/projects/twitter/V.WMA-Project-Shitstorm-Detection-on-Twitter.ipynb)
+		 2. [Project: Topic Detection](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/X.Web-Mining-Applications/projects/twitter/V.WMA-Project-Topic-Detection.ipynb)
+		 2. [Project: Web Crawling - Genre Classification](http://nbviewer.ipython.org/urls/raw.github.com/mgrani/LODA-lecture-notes-on-data-analysis/master/X.Web-Mining-Applications/projects/web-crawling/V.WMA-Project-Web-Page-Genre-Classification.ipynb)
  
 
 Helpful Links
@@ -115,4 +117,10 @@ License
 =======
 
 This work is licesend under a Creative-Commons 3.0 license.
+
+Citation
+=======
+[![DOI](https://zenodo.org/badge/21848/mgrani/LODA-lecture-notes-on-data-analysis.svg)](https://zenodo.org/badge/latestdoi/21848/mgrani/LODA-lecture-notes-on-data-analysis)
+
+Powered by zenodo (Join and contribute your own open material)
 
